@@ -31,7 +31,7 @@ let condimentArray = condiments.split(',');
 
 let meatCost = meatArray.length * prices.meat;
 let toppingCost = toppingArray.length * prices.topping;
-let condimentCost = condimentArray.length * prices.condiments;
+let condimentCost = condimentArray.length * prices.condiment;
 
 let subtotal = meatCost + toppingCost + condimentCost + prices.sandwich;
 let waStateTaxRate = 0.065;
@@ -41,11 +41,7 @@ let totalPrice = subtotal + orderTax;
 
 
 // Step Three //////////////////////////////////////////////////////////
-//
-// TODO: Now that we've calculated all the values, insert them into this
-// template literal using proper expression tags. Note that we must provide
-// all of the info the user gave us to confirm the order, and then we must also
-// provide the cost information so the user understands their bill.
+
 
 let receiptTemplate = `
     <p>SANDWICH ORDER</p>
