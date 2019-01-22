@@ -7,28 +7,10 @@
 // Provide examples where it may help (e.g. show a comma-separated list of
 // toppings to indicate how to specify toppings, etc.)
 //
-// TODO: Prompt the user for what kind of bread they would like.
-// Ideally, that would look something like: "What kind of bread (white, wheat, flat)?"
-
-
-
-// TODO: Prompt the user for what kind of meat(s) they would like.
-// Indicate they should separate multiple items with a comma:
-// "What kind of meat? (Separate meats with a comma if you would like more than one.)"
-
-
-
-// TODO: Prompt the user for what kind of toppings they would like.
-// We expect this to be multiple, so ask them to provide you with a
-// comma-separated list using a user friendly prompt.
-
-
-
-// TODO: Prompt the user for what kind of condiments they would like.
-// Again, we should expect a comma-separated list if items here.
-
-
-
+let bread = prompt ("What kind of bread do you want? (white, wheat, sour)", "Wheat");
+let meats = prompt("What kind of meat(s) do you want? You can choose more than one by seperating it with comma ,", "For example:chicken,bacon,beef");
+let toppings = prompt("Enter list of toppings sepreated by commas(such as lettuce, onions, tomatoes):","lettuce, tomato");
+let condiments = prompt("Enter list of condiments(such as mayo, ketchup, mustard", "mayo");
 // Step Two ////////////////////////////////////////////////////////////
 //
 // Process all the input to calculate values for the user's order. The named
@@ -43,30 +25,19 @@ let prices = {
     condiment: 0.25 // Each condiment costs $0.25
 };
 
-// TODO: Convert order information from Strings to Arrays.
+let meatArray = meats.split(',');;
+let toppingArray = toppings.split(',');
+let condimentArray = condiments.split(',');
 
-let meatArray = null;
-let toppingArray = null;
-let condimentArray = null;
+let meatCost = meatArray.length * prices.meat;
+let toppingCost = toppingArray * prices.topping;
+let condimentCost = condimentArray * prices.condiments;
 
-// TODO: Calculate cost for meat, toppings, and condiments.
-// This requires you to determine the length of each Array you just made
-// and multiply out the costs. You will need to refer to the attributes of the
-// `prices` object in order to calculate these costs.
-
-let meatCost = null;
-let toppingCost = null;
-let condimentCost = null;
-
-// TODO: Combine the costs of each part of the sandwich to get the subtotal.
-let subtotal = null;
-
-// TODO: Calculate the tax owed using the waStateTaxRate.
+let subtotal = meatCost + toppingCost + condimentCost + prices.sandwich;
 let waStateTaxRate = 0.065;
-let orderTax = null;
+let orderTax = subtotal * waStateTaxRate;
 
-// TODO: Calculate `totalPrice` by adding `subtotal` and `orderTax`.
-let totalPrice = null;
+let totalPrice = subtotal + orderTax;
 
 
 // Step Three //////////////////////////////////////////////////////////
