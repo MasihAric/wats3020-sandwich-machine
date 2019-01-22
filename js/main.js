@@ -25,7 +25,7 @@ let prices = {
     condiment: 0.25 // Each condiment costs $0.25
 };
 
-let meatArray = meats.split(',');;
+let meatArray = meats.split(',');
 let toppingArray = toppings.split(',');
 let condimentArray = condiments.split(',');
 
